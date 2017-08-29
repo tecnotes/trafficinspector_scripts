@@ -4,7 +4,9 @@
 
 
 VBS scripts for Traffic Inspector (Smart-Soft Ltd.) http://www.smart-soft.ru/en/
+
 Traffic Inspector is a (registered) trade mark of Smart-Soft Ltd. 
 
 
 1. ChangeGroup.vbs - Скрипт смены группы у пользователя (Change User Group Script)
+2. GetUserInfoPassword.vbs - Скрипт для получения информации (группа, пароль) о пользователе по его имени ( Get User Group And Password Script)

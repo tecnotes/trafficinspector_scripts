@@ -36,25 +36,21 @@ If Group2 = "None" then
 	Wscript.Echo "Группа 'Пользователи вне группы'"
 	GroupIsTrue = 1
 	Else
-	
 		For Each Node in Nodes
-
 			If Node.getAttribute("DisplayName") <> Group2 then
 			Else
 				Group2Name = Group2
 				Group2GUID = Node.getAttribute("GUID")
 				GroupIsTrue = 1
-			End if
-
+			End If
 		Next
-	
-	End if 
+	End If 
 
 If GroupIsTrue = 0 then
 	Wscript.Echo "Группа с именем '" & Group2 & "' не найдена."
 	Wscript.Quit
 Else
-End if
+End If
 
 itUser = 3
 conf_AttrLevelNormal = 0
@@ -62,8 +58,8 @@ Set Dom1 = WScript.CreateObject("Msxml2.DOMDocument.6.0")
 Dom1.LoadXML Srv.GetList(itUser, null, null, conf_AttrLevelDetail)
 Set DocEl = Dom1.DocumentElement
 Set Nodes = DocEl.selectNodes("UserItem")
-For Each Node in Nodes
 
+For Each Node in Nodes
 	If Node.getAttribute("DisplayName") <> User Then
 		Wscript.Echo "Нет пользователя с такими именем: '" & User & "'."
 	Else
@@ -78,10 +74,8 @@ For Each Node in Nodes
 		
 		If Group2 = "None" then
 			WScript.Echo "Группа " & Chr(9) & "Пользователи вне группы"
-		else
+		Else
 			WScript.Echo "Группа " & Chr(9) & Node.getAttribute("GroupDisplayName")
 		End if
-		
 	End If
-
 Next
